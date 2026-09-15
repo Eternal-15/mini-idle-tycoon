@@ -37,6 +37,7 @@ The game is driven by two autoloads:
 - **GameManager** — holds all game state (gold_count, food_count, gold_per_tab, gold_income, food_income) and exposes actions like click_gold(), upgrade_gold(), and upgrade_food(). It emits data_changed when state changes and show_notification for transient on-screen messages.  
 - **SaveManager** — serializes the GameManager state to a JSON file at user://savegame.save and restores it on startup.  
 A Timer node ticks every second and calls GameManager.on_timer_tick() to apply passive income. The UI (ui.gd) listens for data_changed and refreshes the labels in response.  
+
 **Save Data**  
 Progress is stored as JSON with the following fields:  
 - gold_count  
@@ -45,5 +46,8 @@ Progress is stored as JSON with the following fields:
 - gold_income  
 - food_income  
 Saves that are missing or corrupted fall back to a fresh game.  
-   
+  
+## Author
+
+**Sambad Shakya** — [GitHub](https://github.com/Eternal-15)
    
