@@ -1,0 +1,310 @@
+[gd_scene format=3 uid="uid://c14hk1spaqtl"]
+
+[ext_resource type="Script" uid="uid://cclr708biphrj" path="res://Script/ui.gd" id="1_3i1b0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3i1b0"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.16470589, 0.12156863, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95686275, 0.8156863, 0.24705882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpjw8"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.050980393, 0.18039216, 0.101960786, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.32156864, 0.7176471, 0.53333336, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpiq"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.18039216, 0.07058824, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9019608, 0.49411765, 0.13333334, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urowa"]
+bg_color = Color(0.32156864, 0.7176471, 0.53333336, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 16
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="Animation" id="Animation_bpjw8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InfoPanel/InfoLabel:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_lfpiq"]
+resource_name = "fade_notification"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("InfoPanel/InfoLabel:modulate:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(255, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("InfoPanel/InfoLabel:modulate:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(255, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("InfoPanel/InfoLabel:modulate:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(255, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("InfoPanel/InfoLabel:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -1.6666667e-05, 0.16666667, 0, 0, 1, -1.6669434e-05, 0.16666667, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_urowa"]
+_data = {
+&"RESET": SubResource("Animation_bpjw8"),
+&"fade_notification": SubResource("Animation_lfpiq")
+}
+
+[node name="UI" type="CanvasLayer" unique_id=1362361975]
+script = ExtResource("1_3i1b0")
+
+[node name="TopBar" type="Control" parent="." unique_id=736103286]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="TopBar" unique_id=1242014853]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 52.0
+color = Color(0, 0, 0, 0.7058824)
+metadata/_edit_use_anchors_ = true
+
+[node name="GoldGroup" type="HBoxContainer" parent="TopBar" unique_id=797564230]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 268.0
+offset_bottom = 44.0
+theme_override_constants/separation = 24
+
+[node name="Label" type="Label" parent="TopBar/GoldGroup" unique_id=219321381]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "●"
+
+[node name="GoldInfo" type="Label" parent="TopBar/GoldGroup" unique_id=720858230]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Gold: 0"
+
+[node name="GoldIncomePerSec" type="Label" parent="TopBar/GoldGroup" unique_id=1031457567]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Gold/s: 1"
+
+[node name="FoodGroup" type="HBoxContainer" parent="TopBar" unique_id=960547672]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -302.0
+offset_top = 8.0
+offset_right = -10.0
+offset_bottom = 42.0
+grow_horizontal = 0
+theme_override_constants/separation = 32
+
+[node name="FoodIcon" type="Label" parent="TopBar/FoodGroup" unique_id=400530239]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "🌾 "
+
+[node name="FoodInfo" type="Label" parent="TopBar/FoodGroup" unique_id=1193091885]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Food: 0"
+
+[node name="FoodIncomePerSec" type="Label" parent="TopBar/FoodGroup" unique_id=1861243274]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Food/s: 1"
+
+[node name="BottomBar" type="Control" parent="." unique_id=1741748933]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="BottomBar" unique_id=943461274]
+custom_minimum_size = Vector2(1150, 0)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -49.0
+offset_right = 580.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="BoxContainer" parent="BottomBar" unique_id=1815214775]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -48.0
+offset_right = 584.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 96
+alignment = 1
+
+[node name="GoldClickButton" type="Button" parent="BottomBar/VBoxContainer" unique_id=680371285]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_3i1b0")
+text = "Gold"
+icon_alignment = 1
+
+[node name="GoldUpgradeButton" type="Button" parent="BottomBar/VBoxContainer" unique_id=752061957]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_bpjw8")
+text = "Upgrade Coin"
+
+[node name="FoodUpgradeButton" type="Button" parent="BottomBar/VBoxContainer" unique_id=2084380074]
+custom_minimum_size = Vector2(120, 46)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lfpiq")
+text = "Upgrade Food"
+
+[node name="InfoPanel" type="Panel" parent="." unique_id=1176304324]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InfoLabel" type="Label" parent="InfoPanel" unique_id=1195246583]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 202.0
+offset_right = 19.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_urowa")
+text = "gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=579914309]
+libraries/ = SubResource("AnimationLibrary_urowa")
+
+[node name="Timer" type="Timer" parent="." unique_id=594650417]
+autostart = true
+
+[connection signal="pressed" from="BottomBar/VBoxContainer/GoldClickButton" to="." method="_on_gold_click_button_pressed"]
+[connection signal="pressed" from="BottomBar/VBoxContainer/GoldUpgradeButton" to="." method="_on_gold_upgrade_button_pressed"]
+[connection signal="pressed" from="BottomBar/VBoxContainer/FoodUpgradeButton" to="." method="_on_food_upgrade_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,14 @@
+ColorRect
+Control
+Label
+HBoxContainer
+HSplitContainer
+VSplitContainer
+TextureRect
+Sprite2D
+Timer
+Node
+BoxContainer
+AnimationPlayer
+Panel
+Button
